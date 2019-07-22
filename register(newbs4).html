@@ -39,69 +39,138 @@
 			<div class="col-sm-12"><button type="button" class="btn btn-success"><i class="fas fa-info" style="font-size:18px"></i>&nbsp;Panduan Pendaftaran Akaun OnPay</button></div>	
 		</div>
 		
-		<form>
-		<div class="form-group my-3">
-			<div class="row my-3">
-				<div class="col-sm-12"><label for="subd">Subdomain</label></div>
-				<div class="col-sm-12">
-				<div class="input-group">
-				<input type="text" class="form-control" size="30" maxlength="30" id="subd" placeholder="Sila masukkan nama subdomain yang dikehendaki">
-					<div class="input-group-append">
-						<span class="input-group-text">.onpay.my</span>
+		<form action="#" class="needs-validation" novalidate>
+			
+			<div class="form-group my-3">
+				<div class="row my-3">
+					<div class="col-sm-12"><label for="subd">Subdomain</label></div>
+					<div class="col-sm-12">
+					<div class="input-group">
+						<input type="text" class="form-control" size="30" maxlength="30" id="subd" placeholder="Sila masukkan nama subdomain yang dikehendaki" required>
+						<div class="input-group-append">
+							<span class="input-group-text">.onpay.my</span>
+						</div>
+						<div class="invalid-feedback">Sila masukkan nama subdomain.</div>
+					</div>
+					</div>
+					<div class="col-sm-12"><p class="text-secondary">Minimum 3 huruf, maksimum 30 huruf <br> Nama subdomain tidak boleh diubah selepas pendaftaran</p></div>
+				</div>
+			</div>
+			
+			<div class="form-group my-3">
+				<div class="row my-3">
+					<div class="col-sm-12"><label for="eml">Emel</label></div>
+						<div class="col-sm-12">
+							<div class="input-group">
+							<input type="email" class="form-control" size="50" id="eml" placeholder="Masukkan emel anda" required>
+							<div class="col-sm-12"><p class="text-secondary">Maklumat pengaktifan akaun akan dihantar kepada emel yang digunakan</p></div>
+							<div class="invalid-feedback">Sila masukkan semula emel anda.</div>
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			<div class="form-group my-3">
+				<div class="row my-3">
+					<div class="col-sm-12"><label for="idad">ID Admin</label></div>
+						<div class="col-sm-12">
+							<div class="input-group">
+							<input type="text" class="form-control" size="50" id="idad" placeholder="Masukkan ID admin" required>
+							<div class="invalid-feedback">Sila masukkan semula ID admin.</div>
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			<div class="form-group my-3">
+				<div class="row my-3">
+					<div class="col-sm-12"><label for="pssw">Kata Laluan</label></div>
+					<div class="col-sm-12">
+						<div class="input-group">
+							<input type="password" class="form-control" size="50" id="pssw" placeholder="Masukkan kata laluan" required>
+							<div class="col-sm-12"><p class="text-secondary">Minimum 8 huruf</p></div>
+							<div class="invalid-feedback">Sila masukkan semula kata laluan anda.</div>
+						</div>
 					</div>
 				</div>
-				</div>
-				<div class="col-sm-12"><p class="text-secondary">Minimum 3 huruf, maksimum 30 huruf <br> Nama subdomain tidak boleh diubah selepas pendaftaran</p></div>
 			</div>
 			
-			<div class="row my-3">
-				<div class="col-sm-12"><label for="eml">Emel</label></div>
-				<div class="col-sm-12"><input type="email" class="form-control" size="50" id="eml" placeholder="Masukkan emel anda"></div>
-				<div class="col-sm-12"><p class="text-secondary">Maklumat pengaktifan akaun akan dihantar kepada emel yang digunakan</p></div>
-			</div>
-			
-			<div class="row my-3">
-				<div class="col-sm-12"><label for="idad">ID Admin</label></div>
-				<div class="col-sm-12"><input type="text" class="form-control" size="50" id="idad" placeholder="Masukkan ID admin"></div>
-			</div>
-			
-			<div class="row my-3">
-				<div class="col-sm-12"><label for="pssw">Kata Laluan</label></div>
-				<div class="col-sm-12"><input type="password" class="form-control" size="50" id="pssw" placeholder="Masukkan kata laluan"></div>
-				<div class="col-sm-12"><p class="text-secondary">Minimum 8 huruf</p></div>
-			</div>
-			
-			<div class="row my-3">
-				<div class="col-sm-12"><label for="cnfrmpssw">Sahkan Kata Laluan</label></div>
-				<div class="col-sm-12"><input type="password" class="form-control" size="50" id="cnfrmpssw" placeholder="Sahkan kata laluan"></div>
-			</div>
-			
-			<div class="row my-3">
-				<div class="col-sm-12"><label for="nhp">Nombor HP</label></div>
-				<div class="col-sm-12"><input type="text" class="form-control" maxlength="12" id="nhp" placeholder="Masukkan nombor telefon bimbit anda"></div>
-			</div>
-			
-			<div class="row my-3">
-				<div class="col-sm-12">
-					<p>Jantina</p>
-				</div>
-				<div class="col-sm-12 mx-3">
-					<label class="form-check-label mx-2"><input type="radio" class="form-check-input" name="optradio">Lelaki</label>
-					<label class="form-check-label mx-4"><input type="radio" class="form-check-input" name="optradio">Perempuan</label>
+			<div class="form-group my-3">
+				<div class="row my-3">
+					<div class="col-sm-12"><label for="cnfrmpssw">Sahkan Kata Laluan</label></div>
+					<div class="col-sm-12">
+						<div class="input-group">
+						<input type="password" class="form-control" size="50" id="cnfrmpssw" placeholder="Sahkan kata laluan" required>
+						<div class="invalid-feedback">Kata laluan anda tidak sama seperti ruang kata laluan pertama.</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			
-			<div class="row my-3">
-				<div class="col-sm-12"><label for="trhlhr">Tarikh Lahir</label></div>
-				<div class="col-sm-12"><input type="date" class="form-control" id="trhlhr" placeholder="Masukkan tarikh lahir anda"></div>
+			<div class="form-group my-3">
+				<div class="row my-3">
+					<div class="col-sm-12"><label for="nhp">Nombor HP</label></div>
+					<div class="col-sm-12">
+						<div class="input-group">
+							<input type="text" class="form-control" maxlength="12" id="nhp" placeholder="Masukkan nombor telefon bimbit anda" required>
+							<div class="invalid-feedback">Sila masukkan semula nombor telefon bimbit anda.</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			
-			<div class="container text-center">
-				<button type="button" class="btn btn-primary btn-lg" style="background-color:#343485">Daftar</button>
+			<div class="form-check my-3">
+				<div class="row my-3">
+					<div class="col-sm-12">
+						<p>Jantina</p>
+					</div>
+					<div class="col-sm-12 mx-3">
+						<div class="input-group">
+							<input type="radio" class="form-check-input" value="0" name="radiojntina" id="radlelaki" required>
+							<label class="form-check-label mx-2" for="radlelaki">Lelaki</label>
+							<input type="radio" class="form-check-input mx-2" value="1" name="radiojntina" id="radperempuan" required>
+							<label class="form-check-label mx-4" for="radperempuan">Perempuan</label>
+						</div>
+					<div class="invalid-feedback">Sila nyatakan jantina anda.</div>
+					</div>
+				</div>
 			</div>
-		</div>
+			
+			<div class="form-group my-3">
+				<div class="row my-3">
+					<div class="col-sm-12"><label for="trhlhr">Tarikh Lahir</label></div>
+					<div class="col-sm-12">
+						<div class="input-group">
+							<input type="date" class="form-control" id="trhlhr" placeholder="Masukkan tarikh lahir anda" required>
+							<div class="invalid-feedback">Sila masukkan tarikh lahir anda.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="container text-center my-2">
+				<button type="submit" class="btn btn-primary btn-lg" style="background-color:#343485">Daftar</button>
+			</div>
 		</form>
 	</div>
+	
+	<script>
+		(function() {
+		'use strict';
+		window.addEventListener('load', function() {
+		var forms = document.getElementsByClassName('needs-validation');
+		var validation = Array.prototype.filter.call(forms, function(form) {
+		form.addEventListener('submit', function(event) {
+			if (form.checkValidity() === false) {
+				event.preventDefault();
+				event.stopPropagation();
+			}
+        form.classList.add('was-validated');
+		}, false);
+		});
+		}, false);
+	})();
+	</script>
 	
 	<div class="footer" style="background-color:#343485">
 		<nav class="navbar navbar-expand-xl navbar-dark justify-content-center">
