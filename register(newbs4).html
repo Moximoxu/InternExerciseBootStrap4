@@ -11,6 +11,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+	<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#343485">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link text-white" href="#"><b>OnPay Solutions</b></a>
+			</li>
+		</ul>
+	</nav>
+
 </head>
 
 <body>
@@ -23,57 +32,60 @@
 		
 		<div class="row">
 			<div class="col-sm-12"></div>
-			<div class="col-sm-12"><button type="button" class="btn btn-success"><i class='fas fa-info' style='font-size:18px'></i>&nbsp;Panduan Pendaftaran Akaun OnPay</button></div>	
+			<div class="col-sm-12"><button type="button" class="btn btn-success"><i class="fas fa-info" style="font-size:18px"></i>&nbsp;Panduan Pendaftaran Akaun OnPay</button></div>	
 		</div>
 		
 		<div class="form-group">
-			<div class="row">
-				<div class="col-sm-12 pr-4"><label for="subd">Subdomain</label></div>
-				<div class="col-sm-12"><input type="text" class="form-control" size="50" id="subd" placeholder="Sila masukkan nama subdomain yang dikehendaki"></input> onpay.my</div>
+			<div class="row my-3">
+				<div class="col-sm-12"><label for="subd">Subdomain</label></div>
+				<div class="col-sm-12"><input type="text" class="form-control" size="30" maxlength="30" id="subd" placeholder="Sila masukkan nama subdomain yang dikehendaki">.onpay.my</input></div>
+				<div class="col-sm-12"><p class="text-secondary">Minimum 3 huruf, maksimum 30 huruf <br> Nama subdomain tidak boleh diubah selepas pendaftaran</p></div>
 			</div>
 			
-			<div class="row">
+			<div class="row my-3">
 				<div class="col-sm-12"><label for="eml">Emel</label></div>
 				<div class="col-sm-12"><input type="email" class="form-control" size="50" id="eml" placeholder="Masukkan emel anda"></div>
+				<div class="col-sm-12"><p class="text-secondary">Maklumat pengaktifan akaun akan dihantar kepada emel yang digunakan</p></div>
 			</div>
 			
-			<div class="row">
+			<div class="row my-3">
 				<div class="col-sm-12"><label for="idad">ID Admin</label></div>
 				<div class="col-sm-12"><input type="text" class="form-control" size="50" id="idad" placeholder="Masukkan ID admin"></div>
 			</div>
 			
-			<div class="row">
+			<div class="row my-3">
 				<div class="col-sm-12"><label for="pssw">Kata Laluan</label></div>
 				<div class="col-sm-12"><input type="password" class="form-control" size="50" id="pssw" placeholder="Masukkan kata laluan"></div>
+				<div class="col-sm-12"><p class="text-secondary">Minimum 8 huruf</p></div>
 			</div>
 			
-			<div class="row">
+			<div class="row my-3">
 				<div class="col-sm-12"><label for="cnfrmpssw">Sahkan Kata Laluan</label></div>
 				<div class="col-sm-12"><input type="password" class="form-control" size="50" id="cnfrmpssw" placeholder="Sahkan kata laluan"></div>
 			</div>
 			
-			<div class="row">
+			<div class="row my-3">
 				<div class="col-sm-12"><label for="nhp">Nombor HP</label></div>
-				<div class="col-sm-12"><input type="number" class="form-control" size="50" id="nhp" placeholder="Masukkan nombor telefon bimbit anda"></div>
+				<div class="col-sm-12"><input type="text" class="form-control" maxlength="12" id="nhp" placeholder="Masukkan nombor telefon bimbit anda"></div>
 			</div>
 			
-			<div class="row">
+			<div class="row my-3">
 				<div class="col-sm-12">
 					<p>Jantina</p>
 				</div>
-				<div class="col-sm-12">
-					<label class="form-check-label"><input type="radio" class="form-check-input" name="optradio">Lelaki</label> &nbsp; &nbsp;
-					<label class="form-check-label"><input type="radio" class="form-check-input" name="optradio">Perempuan</label>
+				<div class="col-sm-12 mx-3">
+					<label class="form-check-label mx-2"><input type="radio" class="form-check-input" name="optradio">Lelaki</label>
+					<label class="form-check-label mx-4"><input type="radio" class="form-check-input" name="optradio">Perempuan</label>
 				</div>
 			</div>
 			
-			<div class="row">
+			<div class="row my-3">
 				<div class="col-sm-12"><label for="trhlhr">Tarikh Lahir</label></div>
-				<div class="col-sm-12"><input type="date" class="form-control" size="50" id="trhlhr"></div>
+				<div class="col-sm-12"><input type="date" class="form-control" id="trhlhr" placeholder="Masukkan tarikh lahir anda"></div>
 			</div>
 			
-			<div class="container mx-auto">
-				<button type="button" class="btn btn-primary btn-lg">Daftar</button>
+			<div class="container text-center">
+				<button type="button" class="btn btn-primary btn-lg" style="background-color:#343485">Daftar</button>
 			</div>
 		</div>
 	</div>
