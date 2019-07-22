@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en"
 <head>
-  <title>Resume created using BootStrap 4</title>
+  <title>Register Page made using BootStrap 4</title>
   <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, intial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" 
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel='stylesheet' 
+		href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -16,8 +19,64 @@
 			<div class="col-sm-12">
 				<h1 style="font-family:Times New Roman"><small>Pendaftaran Akaun</small></h1>
 			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-12"></div>
+			<div class="col-sm-12"><button type="button" class="btn btn-success"><i class='fas fa-info' style='font-size:18px'></i>&nbsp;Panduan Pendaftaran Akaun OnPay</button></div>	
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-12 pr-4"><label for="subd">Subdomain</label></div>
+				<div class="col-sm-12"><input type="text" class="form-control" size="50" id="subd" placeholder="Sila masukkan nama subdomain yang dikehendaki"></input> onpay.my</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12"><label for="eml">Emel</label></div>
+				<div class="col-sm-12"><input type="email" class="form-control" size="50" id="eml" placeholder="Masukkan emel anda"></div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12"><label for="idad">ID Admin</label></div>
+				<div class="col-sm-12"><input type="text" class="form-control" size="50" id="idad" placeholder="Masukkan ID admin"></div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12"><label for="pssw">Kata Laluan</label></div>
+				<div class="col-sm-12"><input type="password" class="form-control" size="50" id="pssw" placeholder="Masukkan kata laluan"></div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12"><label for="cnfrmpssw">Sahkan Kata Laluan</label></div>
+				<div class="col-sm-12"><input type="password" class="form-control" size="50" id="cnfrmpssw" placeholder="Sahkan kata laluan"></div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12"><label for="nhp">Nombor HP</label></div>
+				<div class="col-sm-12"><input type="number" class="form-control" size="50" id="nhp" placeholder="Masukkan nombor telefon bimbit anda"></div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12">
+					<p>Jantina</p>
+				</div>
+				<div class="col-sm-12">
+					<label class="form-check-label"><input type="radio" class="form-check-input" name="optradio">Lelaki</label> &nbsp; &nbsp;
+					<label class="form-check-label"><input type="radio" class="form-check-input" name="optradio">Perempuan</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12"><label for="trhlhr">Tarikh Lahir</label></div>
+				<div class="col-sm-12"><input type="date" class="form-control" size="50" id="trhlhr"></div>
+			</div>
+			
+			<div class="container mx-auto">
+				<button type="button" class="btn btn-primary btn-lg">Daftar</button>
+			</div>
+		</div>
 	</div>
-	
 </body>
 
 </html>
