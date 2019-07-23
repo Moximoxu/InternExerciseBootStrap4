@@ -7,7 +7,6 @@
 	
 	<!--Icon-->
 	<link rel="icon" href="OPmy Logo.png" type="image/png">
-	
 	<link rel="stylesheet" 
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel='stylesheet' 
@@ -17,7 +16,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://jqueryvalidation.org/files/lib/jquery.js"></script>
 	<script src="https://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
 	<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#343485">
 		<ul class="navbar-nav">
@@ -28,82 +26,29 @@
 	</nav>
 
 	<style>
+	#commentForm {
+		width: 500px;
+	}
+	#commentForm label {
+		width: 250px;
+	}
+	#commentForm label.error, #commentForm input.submit {
+		margin-left: 253px;
+	}
 	#formpendaftaran {
 		width: 670px;
 	}
 	#formpendaftaran label.error {
-		margin-left: 5px;
+		margin-left: 10px;
 		width: auto;
 		display: inline;
 	}
+	#newsletter_topics label.error {
+		display: none;
+		margin-left: 103px;
+	}
+
 	</style>
-	
-	<script>
-	$.validator.setDefaults({
-		submitHandler: function(){
-			alert("Berjaya didaftar!");
-		}
-	});
-	
-	$(document).ready(function() {
-	
-		$('form[id="formpendaftaran"]').validate({
-			rules: {
-				subd: {
-					required: true,
-					minlength: 3,
-					maxlength: 30,
-				},
-				eml: "required",
-				idad: "required",
-				pssw: {
-					required: true,
-					minlength: 8,
-				},
-				cnfrmpssw: {
-					required: true,
-					minlength: 8,
-					equalTo: "#pssw",
-				},
-				nhp: {
-					required: true,
-					maxlength: 12,
-				},
-				radiojantina: "required",
-				trhlhr: "required",
-			},
-		
-			messages: {
-				subd: {
-					required: "Sila masukkan subdomain.",
-					minlength: "Sila pastikan subdomain melebihi 3 huruf.",
-					maxlength: "Sila pastikan subdomain kurang daripada 30 huruf."
-				},
-				eml: "Sila masukkan emel anda.",
-				idad: "Sila masukkan ID Admin.",
-				pssw: {
-					required: "Sila masukkan kata laluan yang bersesuaian.",
-					minlength: "Pastikan kata laluan anda lebih daripada 7 huruf.",
-				},
-				cnfrmpssw: {
-					required: "Sila masukkan semula kata laluan anda mengikut kepada kata laluan yang anda ingini.",
-					minlength: "Pastikan kata laluan anda melebihi 8 huruf.",
-					equalTo: "Sila pastikan kata laluan anda sama dengan yang diatas."
-				},
-				nhp: {
-					required: "Sila masukkan nombor telefon anda.",
-					maxlength: "Sila masukkan nombor telefon yang bersesuaian."
-				},
-				radiojantina: "Sila nyatakan jantina anda.",
-				trhlhr: "Sila nyatakan tarikh lahir anda.",
-			}
-			
-			submitHandler: function(form){
-				form.submit()
-			}
-		});
-	});
-	</script>
 </head>
 
 <body>
@@ -119,7 +64,7 @@
 			<div class="col-sm-12"><button type="button" class="btn btn-success"><i class="fas fa-info" style="font-size:18px"></i>&nbsp;Panduan Pendaftaran Akaun OnPay</button></div>	
 		</div>
 		
-		<form id="formpendaftaran" action="#" class="cmxform" method="post">
+		<form class="cmxform" id="formpendaftaran" action="#">
 			
 			<div class="form-group my-3">
 				<div class="row my-3">
@@ -243,6 +188,7 @@
 		}, false);
 	})();
 	</script>-->
+	
 	<div class="footer" style="background-color:#343485">
 		<nav class="navbar navbar-expand-xl navbar-dark justify-content-center">
 			<ul class="navbar-nav">
@@ -283,5 +229,66 @@
 		</nav>
 		<p class="text-white text-center mb-2"><b>OnPay Solutions Sdn Bhd <i class="fa fa-copyright"></i> 2014-2019</b></p>
 	</div>
+	
+<script>
+	$(document).ready(function() {
+	
+		$("#formpendaftaran").validate({
+			
+			rules: {
+				subd: {
+					required: true,
+					minlength: 3,
+					maxlength: 30,
+				},
+				eml: {
+					required: true,
+					email: true
+				}
+				idad: "required",
+				pssw: {
+					required: true,
+					minlength: 8,
+				},
+				cnfrmpssw: {
+					required: true,
+					minlength: 8,
+					equalTo: "#pssw",
+				},
+				nhp: {
+					required: true,
+					maxlength: 12,
+				},
+				radiojantina: "required",
+				trhlhr: "required"
+			},
+		
+			messages: {
+				subd: {
+					required: "Sila masukkan subdomain.",
+					minlength: "Sila pastikan subdomain melebihi 3 huruf.",
+					maxlength: "Sila pastikan subdomain kurang daripada 30 huruf."
+				},
+				eml: "Sila masukkan emel anda.",
+				idad: "Sila masukkan ID Admin.",
+				pssw: {
+					required: "Sila masukkan kata laluan yang bersesuaian.",
+					minlength: "Pastikan kata laluan anda lebih daripada 7 huruf."
+				},
+				cnfrmpssw: {
+					required: "Sila masukkan semula kata laluan anda mengikut kepada kata laluan yang anda ingini.",
+					minlength: "Pastikan kata laluan anda melebihi 8 huruf.",
+					equalTo: "Sila pastikan kata laluan anda sama dengan yang diatas."
+				},
+				nhp: {
+					required: "Sila masukkan nombor telefon anda.",
+					maxlength: "Sila masukkan nombor telefon yang bersesuaian."
+				},
+				radiojantina: "Sila nyatakan jantina anda.",
+				trhlhr: "Sila nyatakan tarikh lahir anda."
+			}
+		});
+	});
+</script>
 </body>
 </html>
