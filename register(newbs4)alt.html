@@ -26,28 +26,13 @@
 	</nav>
 
 	<style>
-	#commentForm {
-		width: 500px;
-	}
-	#commentForm label {
-		width: 250px;
-	}
-	#commentForm label.error, #commentForm input.submit {
-		margin-left: 253px;
-	}
 	#formpendaftaran {
-		width: 670px;
-	}
-	#formpendaftaran label.error {
-		margin-left: 10px;
 		width: auto;
-		display: inline;
 	}
-	#newsletter_topics label.error {
-		display: none;
-		margin-left: 103px;
+	.errorTxt {
+		width: auto;
+		color: #ff6347;
 	}
-
 	</style>
 </head>
 
@@ -71,11 +56,16 @@
 					<div class="col-sm-12"><label for="subd">Subdomain</label></div>
 					<div class="col-sm-12">
 					<div class="input-group">
-						<input type="text" class="form-control" id="subd" placeholder="Sila masukkan nama subdomain yang dikehendaki">
+						<input type="text" class="form-control" size="30" id="subd" name="subd" data-error="#errsubd" placeholder="Sila masukkan nama subdomain yang dikehendaki">
 						<div class="input-group-append">
 							<span class="input-group-text">.onpay.my</span>
 						</div>
 					</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="errorTxt">
+							<span id="errsubd"></span>
+						</div>
 					</div>
 					<div class="col-sm-12"><p class="text-secondary">Minimum 3 huruf, maksimum 30 huruf <br> Nama subdomain tidak boleh diubah selepas pendaftaran</p></div>
 				</div>
@@ -86,7 +76,12 @@
 					<div class="col-sm-12"><label for="eml">Emel</label></div>
 						<div class="col-sm-12">
 							<div class="input-group">
-							<input type="email" class="form-control" id="eml" placeholder="Masukkan emel anda">
+							<input type="email" class="form-control" id="eml" name="eml" data-error="#erreml" placeholder="Masukkan emel anda">
+							<div class="col-sm-12">
+								<div class="errorTxt">
+									<span id="erreml"></span>
+								</div>
+							</div>
 							<div class="col-sm-12"><p class="text-secondary">Maklumat pengaktifan akaun akan dihantar kepada emel yang digunakan</p></div>
 							</div>
 						</div>
@@ -98,7 +93,12 @@
 					<div class="col-sm-12"><label for="idad">ID Admin</label></div>
 						<div class="col-sm-12">
 							<div class="input-group">
-							<input type="text" class="form-control" id="idad" placeholder="Masukkan ID admin">
+							<input type="text" class="form-control" id="idad" name="idad" data-error="#erridad" placeholder="Masukkan ID admin">
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="errorTxt ml-3">
+								<span id="erridad"></span>
 							</div>
 						</div>
 				</div>
@@ -109,7 +109,12 @@
 					<div class="col-sm-12"><label for="pssw">Kata Laluan</label></div>
 					<div class="col-sm-12">
 						<div class="input-group">
-							<input type="password" class="form-control" id="pssw" placeholder="Masukkan kata laluan">
+							<input type="password" class="form-control" id="pssw" name="pssw" data-error="#errpssw" placeholder="Masukkan kata laluan">
+							<div class="col-sm-12">
+								<div class="errorTxt">
+									<span id="errpssw"></span>
+								</div>
+							</div>
 							<div class="col-sm-12"><p class="text-secondary">Minimum 8 huruf</p></div>
 						</div>
 					</div>
@@ -121,7 +126,12 @@
 					<div class="col-sm-12"><label for="cnfrmpssw">Sahkan Kata Laluan</label></div>
 					<div class="col-sm-12">
 						<div class="input-group">
-						<input type="password" class="form-control" id="cnfrmpssw" placeholder="Sahkan kata laluan">
+						<input type="password" class="form-control" id="cnfrmpssw" name="cnfrmpssw" data-error="#errcnfrmpssw" placeholder="Sahkan kata laluan">
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="errorTxt ml-3">
+							<span id="errcnfrmpssw"></span>
 						</div>
 					</div>
 				</div>
@@ -132,7 +142,12 @@
 					<div class="col-sm-12"><label for="nhp">Nombor HP</label></div>
 					<div class="col-sm-12">
 						<div class="input-group">
-							<input type="text" class="form-control" id="nhp" placeholder="Masukkan nombor telefon bimbit anda">
+							<input type="text" class="form-control" id="nhp" name="nhp" data-error="#errnhp" placeholder="Masukkan nombor telefon bimbit anda">
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="errorTxt ml-3">
+							<span id="errnhp"></span>
 						</div>
 					</div>
 				</div>
@@ -145,9 +160,9 @@
 					</div>
 					<div class="col-sm-12 mx-3">
 						<div class="input-group">
-							<input type="radio" class="form-check-input" value="0" name="radiojntina" id="radlelaki">
+							<input type="radio" class="form-check-input" value="0" name="radiojntina" id="radlelaki" name="radlelaki">
 							<label class="form-check-label mr-2" for="radlelaki">Lelaki</label>
-							<input type="radio" class="form-check-input ml-5" value="1" name="radiojntina" id="radperempuan">
+							<input type="radio" class="form-check-input ml-5" value="1" name="radiojntina" id="radperempuan" name="radperempuan">
 							<label class="form-check-label ml-3" for="radperempuan">Perempuan</label>
 						</div>
 					</div>
@@ -159,14 +174,19 @@
 					<div class="col-sm-12"><label for="trhlhr">Tarikh Lahir</label></div>
 					<div class="col-sm-12">
 						<div class="input-group">
-							<input type="date" class="form-control" id="trhlhr" placeholder="Masukkan tarikh lahir anda">
+							<input type="date" class="form-control" id="trhlhr" name="trhlhr" data-error="#errtrh" placeholder="Masukkan tarikh lahir anda">
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="errorTxt ml-3">
+							<span id="errtrh"></span>
 						</div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="container text-center my-2">
-				<button type="submit" class="btn btn-primary btn-lg" value="submit" style="background-color:#343485">Daftar</button>
+				<input type="submit" class="submit btn btn-primary btn-lg" value="Submit" style="background-color:#343485">
 			</div>
 		</form>
 	</div>
@@ -233,8 +253,20 @@
 <script>
 	$(document).ready(function() {
 	
-		$("#formpendaftaran").validate({
-			
+		var validator = $("#formpendaftaran").validate({
+			highlight:function(element){
+				$(element).closest(".form-group").addClass("has-error")
+			},
+			unhighlight:function(element){
+				$(element).closest(".form-group").removeClass("has-error")
+			},
+			errorElement:"span",
+			errorClass:"help-block",
+			errorPlacement:function(error,element){
+				$(element).closest(".form-group").append(error);
+				error.addClass("col-md-offset-4 col-md-8")
+			},
+		
 			rules: {
 				subd: {
 					required: true,
@@ -244,7 +276,7 @@
 				eml: {
 					required: true,
 					email: true
-				}
+				},
 				idad: "required",
 				pssw: {
 					required: true,
@@ -286,6 +318,15 @@
 				},
 				radiojantina: "Sila nyatakan jantina anda.",
 				trhlhr: "Sila nyatakan tarikh lahir anda."
+			},
+			
+			errorPlacement: function(error, element) {
+				var placement = $(element).data('error');
+				if (placement) {
+					$(placement).append(error)
+				} else {
+					error.insertAfter(element);
+				}
 			}
 		});
 	});
