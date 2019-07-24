@@ -7,6 +7,7 @@
 	
 	<!--Icon-->
 	<link rel="icon" href="OPmy Logo.png" type="image/png">
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
 	<link rel="stylesheet" 
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel='stylesheet' 
@@ -16,6 +17,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://jqueryvalidation.org/files/lib/jquery.js"></script>
 	<script src="https://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
 	
 	<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#343485">
 		<ul class="navbar-nav">
@@ -49,7 +53,7 @@
 			<div class="col-sm-12"><button type="button" class="btn btn-success"><i class="fas fa-info" style="font-size:18px"></i>&nbsp;Panduan Pendaftaran Akaun OnPay</button></div>	
 		</div>
 		
-		<form class="cmxform" id="formpendaftaran" action="#">
+		<form id="formpendaftaran" action="#">
 			
 			<div class="form-group my-3">
 				<div class="row my-3">
@@ -153,21 +157,20 @@
 				</div>
 			</div>
 			
-			<div class="form-check my-3">
 				<div class="row my-3">
 					<div class="col-sm-12">
 						<p>Jantina</p>
-					</div>
-					<div class="col-sm-12 mx-3">
-						<div class="input-group">
-							<input type="radio" class="form-check-input" value="0" name="radiojntina" id="radlelaki" name="radlelaki">
-							<label class="form-check-label mr-2" for="radlelaki">Lelaki</label>
-							<input type="radio" class="form-check-input ml-5" value="1" name="radiojntina" id="radperempuan" name="radperempuan">
-							<label class="form-check-label ml-3" for="radperempuan">Perempuan</label>
-						</div>
+							<label for="gender_male">
+								<input type="radio" value="l" name="gender" id="gender_male"/>
+							Lelaki
+							</label>
+							<label for="gender_female">
+								<input type="radio" value="p" name="gender" id="gender_female"/>
+							Perempuan
+							</label>
+							<label for="gender" class="error" id="errgender">Sila nyatakan jantina anda.</label>
 					</div>
 				</div>
-			</div>
 			
 			<div class="form-group my-3">
 				<div class="row my-3">
@@ -186,7 +189,7 @@
 			</div>
 			
 			<div class="container text-center my-2">
-				<input type="submit" class="submit btn btn-primary btn-lg" value="Submit" style="background-color:#343485">
+				<input type="submit" class="submit btn btn-primary btn-lg" value="Daftar" style="background-color:#343485">
 			</div>
 		</form>
 	</div>
@@ -251,6 +254,11 @@
 	</div>
 	
 <script>
+	jQuery.validator.setDefaults({
+		debug: true,
+		success: "valid"
+	});
+	
 	$(document).ready(function() {
 	
 		var validator = $("#formpendaftaran").validate({
@@ -291,7 +299,9 @@
 					required: true,
 					maxlength: 12,
 				},
-				radiojantina: "required",
+				gender: {
+					required: true
+				},
 				trhlhr: "required"
 			},
 		
@@ -316,7 +326,6 @@
 					required: "Sila masukkan nombor telefon anda.",
 					maxlength: "Sila masukkan nombor telefon yang bersesuaian."
 				},
-				radiojantina: "Sila nyatakan jantina anda.",
 				trhlhr: "Sila nyatakan tarikh lahir anda."
 			},
 			
