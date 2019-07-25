@@ -19,6 +19,8 @@
 	<script src="https://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script src="C:\Users\Ikhmal\Documents\PITA\IP\Exercises\Bootstrap 4\OnPay Site SCs\jquery.restrictedtextfield.js"></script>
+
 
 	
 	<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#343485">
@@ -276,6 +278,14 @@
 				debug: true,
 				success: "valid"
 		});
+		
+		jQuery.validator.addMethod("checkNum", function(value, element) {
+			if(/^[0-9_-]{12}$/.test(value)){
+				return true;
+			} else {
+				return false;
+			};
+		}, 'Sila hanya masukkan digit dan simbol "-" sahaja dan mencukupi 11 digit. Contoh:6010-1234567');
 	
 		var validator = $("#formpendaftaran").validate({
 			highlight:function(element){
@@ -286,10 +296,6 @@
 			},
 			errorElement:"span",
 			errorClass:"help-block",
-			errorPlacement:function(error,element){
-				$(element).closest(".form-group").append(error);
-				error.addClass("col-md-offset-4 col-md-8")
-			},
 		
 			rules: {
 				subd: {
@@ -313,6 +319,7 @@
 				},
 				nhp: {
 					required: true,
+					checkNum: true,
 					maxlength: 12,
 				},
 				gender: {
@@ -340,7 +347,7 @@
 				},
 				nhp: {
 					required: "Sila masukkan nombor telefon anda.",
-					maxlength: "Sila masukkan nombor telefon yang bersesuaian."
+					maxlength: "Sila masukkan nombor telefon yang boleh digunakan."
 				},
 				trhlhr: "Sila nyatakan tarikh lahir anda.",
 				gender: "Sila nyatakan jantina anda."
