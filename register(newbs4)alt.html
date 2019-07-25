@@ -37,6 +37,9 @@
 		width: auto;
 		color: #ff6347;
 	}
+	.form-group {
+		font-size: 16px;
+	}
 	</style>
 </head>
 
@@ -81,14 +84,14 @@
 						<div class="col-sm-12">
 							<div class="input-group">
 							<input type="email" class="form-control" id="eml" name="eml" data-error="#erreml" placeholder="Masukkan emel anda">
-							<div class="col-sm-12">
-								<div class="errorTxt">
-									<span id="erreml"></span>
-								</div>
-							</div>
-							<div class="col-sm-12"><p class="text-secondary">Maklumat pengaktifan akaun akan dihantar kepada emel yang digunakan</p></div>
 							</div>
 						</div>
+						<div class="col-sm-12">
+							<div class="errorTxt">
+								<span id="erreml"></span>
+							</div>
+						</div>
+						<div class="col-sm-12"><p class="text-secondary">Maklumat pengaktifan akaun akan dihantar kepada emel yang digunakan</p></div>
 				</div>
 			</div>
 			
@@ -101,7 +104,7 @@
 							</div>
 						</div>
 						<div class="col-sm-12">
-							<div class="errorTxt ml-3">
+							<div class="errorTxt">
 								<span id="erridad"></span>
 							</div>
 						</div>
@@ -114,14 +117,14 @@
 					<div class="col-sm-12">
 						<div class="input-group">
 							<input type="password" class="form-control" id="pssw" name="pssw" data-error="#errpssw" placeholder="Masukkan kata laluan">
-							<div class="col-sm-12">
-								<div class="errorTxt">
-									<span id="errpssw"></span>
-								</div>
-							</div>
-							<div class="col-sm-12"><p class="text-secondary">Minimum 8 huruf</p></div>
 						</div>
 					</div>
+					<div class="col-sm-12">
+						<div class="errorTxt">
+							<span id="errpssw"></span>
+						</div>
+					</div>
+					<div class="col-sm-12"><p class="text-secondary">Minimum 8 huruf</p></div>
 				</div>
 			</div>
 			
@@ -134,7 +137,7 @@
 						</div>
 					</div>
 					<div class="col-sm-12">
-						<div class="errorTxt ml-3">
+						<div class="errorTxt">
 							<span id="errcnfrmpssw"></span>
 						</div>
 					</div>
@@ -150,27 +153,34 @@
 						</div>
 					</div>
 					<div class="col-sm-12">
-						<div class="errorTxt ml-3">
+						<div class="errorTxt">
 							<span id="errnhp"></span>
 						</div>
 					</div>
 				</div>
 			</div>
 			
+			<div class="form-group">
 				<div class="row my-3">
 					<div class="col-sm-12">
 						<p>Jantina</p>
 							<label for="gender_male">
-								<input type="radio" value="l" name="gender" id="gender_male"/>
+								<input type="radio" value="l" name="gender" id="gender_male" data-error="#errgender"/>
 							Lelaki
 							</label>
+							<br/>
 							<label for="gender_female">
-								<input type="radio" value="p" name="gender" id="gender_female"/>
+								<input type="radio" value="p" name="gender" id="gender_female" data-error="#errgender"/>
 							Perempuan
 							</label>
-							<label for="gender" class="error" id="errgender">Sila nyatakan jantina anda.</label>
+					</div>
+					<div class="col-sm-12">
+						<div class="errorTxt">
+							<span id="errgender"></span>
+						</div>
 					</div>
 				</div>
+			</div>
 			
 			<div class="form-group my-3">
 				<div class="row my-3">
@@ -181,7 +191,7 @@
 						</div>
 					</div>
 					<div class="col-sm-12">
-						<div class="errorTxt ml-3">
+						<div class="errorTxt">
 							<span id="errtrh"></span>
 						</div>
 					</div>
@@ -254,12 +264,18 @@
 	</div>
 	
 <script>
-	jQuery.validator.setDefaults({
-		debug: true,
-		success: "valid"
+	$.validator.setDefaults({
+		submitHandler: function(){
+			alert("Berjaya dihantar!");
+		}
 	});
 	
 	$(document).ready(function() {
+		
+		jQuery.validator.setDefaults({
+				debug: true,
+				success: "valid"
+		});
 	
 		var validator = $("#formpendaftaran").validate({
 			highlight:function(element){
@@ -326,7 +342,8 @@
 					required: "Sila masukkan nombor telefon anda.",
 					maxlength: "Sila masukkan nombor telefon yang bersesuaian."
 				},
-				trhlhr: "Sila nyatakan tarikh lahir anda."
+				trhlhr: "Sila nyatakan tarikh lahir anda.",
+				gender: "Sila nyatakan jantina anda."
 			},
 			
 			errorPlacement: function(error, element) {
